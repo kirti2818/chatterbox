@@ -1,6 +1,6 @@
 import PrivateRoute from "../../components/PrivateRoute";
 import { cookies } from "next/headers";
-import Logout from "../BaseComponents/Logout";
+import Header from "@/components/Header";
 
 const Privatelayout = async ({ children }) => {
   const cookieStore = await cookies();
@@ -8,7 +8,7 @@ const Privatelayout = async ({ children }) => {
 
   return (
     <>
-      <Logout />
+      <Header/>
       <PrivateRoute token={token}>{children}</PrivateRoute>
     </>
   );
